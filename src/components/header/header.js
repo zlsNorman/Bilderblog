@@ -1,11 +1,12 @@
 import React from "react";
-import styles from '../../styles/index.module.scss';
+import './header.module.scss';
+import { Location } from '@reach/router';
 
-const Header = ({ name, anzahl, jahr }) => {
+const Header = () => {
   return(
   <>
-    <div className={styles.headerStyle}> <h1>Jannis Art Gallery</h1></div>
-    <div className={styles.headerStyle}> <p>Startseite</p></div>
+    <h1>Jannis Art Gallery</h1>
+    <div> <p>Startseite</p></div>
   </>
 )}
 export default Header;
