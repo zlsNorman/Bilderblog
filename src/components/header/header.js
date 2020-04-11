@@ -6,7 +6,7 @@ const Header = () => {
   return(
   <>
     <h1>Jannis Art Gallery</h1>
-    <div> <p>Startseite</p></div>
+    <p>Startseite</p>
   </>
 )}
 export default Header;

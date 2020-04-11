@@ -7,7 +7,7 @@ import references from "../img/references.jpg"
 export default () => {
 
  return (
-  <>
+  <div>
     <div className={styles.imageGallery}> 
       <Link to="/test">
         <img src={art} alt="art"/>
@@ -18,5 +18,5 @@ export default () => {
         <h1>References</h1>
       </Link>
     </div>
-  </>
+  </div>
  )}
