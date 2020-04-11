@@ -26,16 +26,22 @@ export default () => {
       <Link to="/test" name={name}>Testseite</Link>
       */}
 
-    <div className={styles.imageGallery}>
+    <div className={styles.imageGallery}> 
       <div className={styles.GalleryImage}>
-        <img src={art} alt="art"/>
-        <div className={styles.GalleryImageText}>
-          <h1>Art</h1>
-        </div>
+        <Link to="/test">
+          <img src={art} alt="art"/>
+          <div className={styles.GalleryImageText}>
+            <h1>Art</h1>
+          </div>
+        </Link>
       </div>
-      <div>
-        <h1>References</h1>
-        <img src={references} alt="references"/>
+      <div className={styles.GalleryImage}>
+        <Link to="/test">
+          <img src={references} alt="references"/>
+          <div className={styles.GalleryImageText}>
+            <h1>References</h1>
+          </div>
+        </Link>
       </div>
     </div>
   </div>
