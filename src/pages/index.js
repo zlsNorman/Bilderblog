@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 import styles from '../styles/index.module.scss';
-import art from "../img/art.jpeg"
+import art from "../img/art.jpg"
 import references from "../img/references.jpg"
 export default () => {
 
