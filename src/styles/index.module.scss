@@ -6,6 +6,7 @@
     width: 100%;
     position: relative;
     color:var(--white);
+    height: 85vh;
     &:hover {
       z-index: 10;
     }
@@ -32,4 +33,5 @@
       justify-content: center;
     }
   }
+  
 }

@@ -2,10 +2,25 @@
 :root {
   --white : hsl(0,0%,95%);
   --shadow: 2px 2px 4px hsla(0,0%,22%,0.25);
+  --shadowRightImage : hsla(0, 0%, 0%, 0.5) -5px 5px 20px 2px;
+  --shadowLeftImage : hsla(0, 0%, 0%, 0.5) 5px 5px 20px 2px;
 }
-
 body { 
   min-height: 100vh;
   background: rgba(0, 0, 0, 0.89);
   overflow-x:hidden;
+  overflow:hidden;
+}
+
+.rechtesImageStartseite:hover img{
+    box-shadow: var(--shadowRightImage);
+}
+
+.linkesImageStartseite:hover img{
+    box-shadow: var(--shadowLeftImage);
+}
+
+.großeTexte {
+    font-family: limelight;
+    font-weight: 100;
 }
