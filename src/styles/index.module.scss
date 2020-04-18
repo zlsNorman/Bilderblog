@@ -1,7 +1,7 @@
 .header{
 	padding: 0 1em;
 	background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQFWJ9SxPI9kUoz4_S7-U1qXchsXjZUgRbOruAKhlBmzMw2_BDB&usqp=CAU);
-	box-shadow: rgba(0, 0, 0, 0.53) 0px 2px 3px 0px;
+	box-shadow:var(--shadow);
     border-radius: 10px;
 	.headerText{
 		color:var(--white);
