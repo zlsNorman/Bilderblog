@@ -4,7 +4,6 @@ import "../../styles/global.scss";
 
 export const wrapRootElement = ({element}) => (
   <>
-    <Header/>
     {element}
   </>
 )

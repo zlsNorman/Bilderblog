@@ -5,22 +5,11 @@
   --shadowRightImage : hsla(0, 0%, 0%, 0.5) -5px 5px 20px 2px;
   --shadowLeftImage : hsla(0, 0%, 0%, 0.5) 5px 5px 20px 2px;
 }
-body { 
+html {
+  font-size:10px;
+}
+body {
+  font-size:1.6rem;
   min-height: 100vh;
-  background: rgba(0, 0, 0, 0.89);
   overflow-x:hidden;
-  overflow:hidden;
-}
-
-.rechtesImageStartseite:hover img{
-    box-shadow: var(--shadowRightImage);
-}
-
-.linkesImageStartseite:hover img{
-    box-shadow: var(--shadowLeftImage);
-}
-
-.großeTexte {
-    font-family: limelight;
-    font-weight: 100;
 }

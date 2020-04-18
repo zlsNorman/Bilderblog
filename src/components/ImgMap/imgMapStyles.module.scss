@@ -1,0 +1,8 @@
+.imageList {
+	display:grid;
+	grid-template-columns: 1fr 1fr;
+    grid-gap:1rem;
+    div{
+        border-radius: 10px;
+    }
+}

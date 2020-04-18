@@ -1,21 +1,72 @@
-import React, { useState } from "react"
-import { Link } from "gatsby"
+import React, { useState, Fragment, useEffect } from 'react';
+import { Link, graphql } from 'gatsby';
 import styles from '../styles/index.module.scss';
-import art from "../img/art.jpg"
-import references from "../img/references.jpg"
-export default () => {
+import classNames from 'classnames';
+import Button from '../components/button/button';
+import ImgMapList from '../components/ImgMap/imgMap';
 
- return (
-  <div>
-    <div className={styles.imageGallery}> 
-      <Link className = "linkesImageStartseite" to="/test">
-        <img src={art} alt="art"/>
-        <h1>Art</h1>
-      </Link>
-      <Link className = "rechtesImageStartseite" to="/test">
-        <img src={references} alt="references"/>
-        <h1 className="großeTexte">References</h1>
-      </Link>
-    </div>
-  </div>
- )}
+export default ({ data }) => {
+	const [ active, setActive ] = useState(true);
+	const [ images, setImages ] = useState([]);
+	const { artImages, refImages } = data;
+	const artButton = classNames({
+		[styles.btn]: true,
+		[styles.active]: active
+	});
+
+	const refButton = classNames({
+		[styles.btn]: true,
+		[styles.active]: !active
+	});
+	useEffect(
+		() => {
+			if (active) setImages(artImages.edges);
+			else setImages(refImages.edges);
+		},
+		[ active ]
+	);
+	console.log(artButton);
+	return (
+		<Fragment>
+			<div className= {styles.header}>
+				<h1 className={styles.headerText}>Jannis Art Gallery</h1>
+				<div className={styles.buttonSwitcher}>
+					<Button name= "Art" handleClick= {() => setActive(true)} ClassName ={artButton}/>
+					<Button name= "References" handleClick= {() => setActive(false)} ClassName ={refButton}/>
+				</div>
+			</div>
+			<div className= {styles.content}>
+				<ImgMapList imagesArray = {images}/>
+			</div>
+		</Fragment>
+	);
+};
+
+export const artImages = graphql`
+	query getImagesQuery {
+		artImages: allFile(filter: { extension: { regex: "/(jpg)|(jpeg)|(png)/" }, relativeDirectory: { eq: "art" } }) {
+			edges {
+				node {
+					name
+					childImageSharp {
+						fluid(maxWidth: 1000) {
+							...GatsbyImageSharpFluid
+						}
+					}
+				}
+			}
+		}
+		refImages: allFile(filter: { extension: { regex: "/(jpg)|(jpeg)|(png)/" }, relativeDirectory: { eq: "ref" } }) {
+			edges {
+				node {
+					childImageSharp {
+						fluid(maxWidth: 1000) {
+							...GatsbyImageSharpFluid
+							
+						}
+					}
+				}
+			}
+		}
+	}
+`;
